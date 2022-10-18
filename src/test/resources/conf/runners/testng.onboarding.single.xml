@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single On Prem">
+    <test name="Automate Onboarding OSx chrome">
+        <parameter name="env_cap_id" value="1"/>
+        <classes>
+            <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
+            <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
+        </classes>
+    </test>
+</suite>
