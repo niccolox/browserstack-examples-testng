@@ -20,9 +20,13 @@ public class LoginTest extends TestBase {
         Assert.assertEquals(getDriver().findElement(By.className("username")).getText(), "demouser");
     }
 
+    JavascriptExecutor jse = (JavascriptExecutor)driver;
+    jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"<passed/failed>\", \"reason\": \"<reason>\"}}");
+    
+
     private boolean downloadedFileExists(String fileName) {
         JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-        return Boolean.parseBoolean(jse.executeScript("browserstack_executor: {\"action\": \"fileExists\", \"arguments\": {\"fileName\": \"" + fileName + "\"}}").toString());
+        return Boolean.parseBoolean(jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"<passed/failed>\", \"reason\": \"<reason>\"}}").toString());
     }
 
 }
