@@ -3,8 +3,8 @@
 ## Local Test
 
 ```
-mvn compile && mvn test -P nicholas-sample-local-test
-mvn compile && mvn test -P on-prem-onboarding
+mvn compile && mvn test -P on-prem-parallel-onboarding
+mvn compile && mvn test -P on-prem-single-onboarding
 ```
 
 ## Browserstack Automate Test
