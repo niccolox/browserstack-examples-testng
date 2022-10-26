@@ -29,4 +29,9 @@ public class OrderTest extends TestBase {
         softly.assertAll();
     }
 
+    private boolean downloadedFileExists(String fileName) {
+        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+        return Boolean.parseBoolean(jse.executeScript("browserstack_executor: {\"action\": \"fileExists\", \"arguments\": {\"fileName\": \"" + fileName + "\"}}").toString());
+    }
+
 }
