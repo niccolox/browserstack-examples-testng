@@ -62,7 +62,7 @@ public class TestBase {
             Map<String, String> commonCapabilities = (Map<String, String>) envs.get("common_caps");
             commonCapabilities.put("name", m.getName());
 
-            String buildName = System.getenv("JENKINS_LABEL");
+            String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
             commonCapabilities.put("build", buildName);
             
             // commonCapabilities.put("build", commonCapabilities.get("build") + " - " + TIMESTAMP)
