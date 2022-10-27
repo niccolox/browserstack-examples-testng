@@ -54,8 +54,8 @@
     },
     "single": {
       "common_caps": {
-        "project": "browserstack-examples",
-        "build": "browserstack-examples-testNG",
+        "project": "nicholas-browserstack-examples",
+        "build": "BROWSERSTACK_BUILD_NAME",
         "name": "Single Test"
       },
       "env_caps": [

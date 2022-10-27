@@ -62,6 +62,7 @@ public class TestBase {
             Map<String, String> commonCapabilities = (Map<String, String>) envs.get("common_caps");
             commonCapabilities.put("name", m.getName());
             commonCapabilities.put("build", commonCapabilities.get("build") + " - " + TIMESTAMP);
+
             Map<String, String> envCapabilities = (Map<String, String>) ((org.json.simple.JSONArray) envs.get("env_caps")).get(env_cap_id);
             Map<String, String> localCapabilities = (Map<String, String>) envs.get("local_binding_caps");
 
@@ -116,6 +117,14 @@ public class TestBase {
         }
         return accessKey;
     }
+
+    private String getBrowserstackBuildName(JSONObject testCapsConfig) {
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        if (buildName == null) {
+            buildName = testCapsConfig.get("buildName").toString();
+        }
+        return buildName;
+    }   
     
     private void createSecureTunnelIfNeeded(DesiredCapabilities caps, JSONObject testCapsConfig) throws Exception {
         if (caps.getCapability("browserstack.local") != null
