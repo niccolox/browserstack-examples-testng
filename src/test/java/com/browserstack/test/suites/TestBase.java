@@ -121,7 +121,7 @@ public class TestBase {
     private String getBrowserstackBuildName(JSONObject testCapsConfig) {
         String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
         if (buildName == null) {
-            buildName = testCapsConfig.get("buildName").toString();
+            buildName = testCapsConfig.get("build").toString();
         }
         return buildName;
     }   
