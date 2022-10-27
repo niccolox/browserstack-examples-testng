@@ -117,6 +117,10 @@ public class TestBase {
         return accessKey;
     }
 
+    // https://www.browserstack.com/docs/automate/selenium/jenkins#Selenium_Legacy_JSON
+    String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+
+    
     private void createSecureTunnelIfNeeded(DesiredCapabilities caps, JSONObject testCapsConfig) throws Exception {
         if (caps.getCapability("browserstack.local") != null
                 && caps.getCapability("browserstack.local").equals("true")) {
