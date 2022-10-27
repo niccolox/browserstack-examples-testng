@@ -120,13 +120,13 @@ public class TestBase {
         return accessKey;
     }
 
-    private String getBrowserstackBuild(JSONObject testCapsConfig) {
-        String build = System.getenv("BROWSERSTACK_BUILD_NAME");
-        if (build == null) {
-            build = testCapsConfig.get("build").toString();
-        }
-        return build;
-    }   
+    // private String getBrowserstackBuildName(JSONObject testCapsConfig) {
+    //     String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+    //     if (buildName == null) {
+    //         buildName = testCapsConfig.get("build").toString();
+    //     }
+    //     return buildName;
+    // }   
     
     private void createSecureTunnelIfNeeded(DesiredCapabilities caps, JSONObject testCapsConfig) throws Exception {
         if (caps.getCapability("browserstack.local") != null
