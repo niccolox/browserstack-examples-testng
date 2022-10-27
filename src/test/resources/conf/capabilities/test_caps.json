@@ -7,7 +7,7 @@
       "common_caps": {
         "project": "browserstack-examples",
         "build": "browserstack-examples-testNG",
-        "name": "BROWSERSTACK_BUILD_NAME",
+        "name": "Parallel Test",
         "browserstack.debug": "true",
         "browserstack.networkLogs": "true",
         "browserstack.console": "verbose"
