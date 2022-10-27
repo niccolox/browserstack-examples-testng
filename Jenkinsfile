@@ -1,30 +1,20 @@
-pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-    }
-}
+ pipeline {
+   agent any
+   stages {
+       stage ('Build') {
+         git url: 'https://github.com/niccolox/browserstack-examples-testng'
+         withMaven {
+           sh "mvn clean verify"
+         } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+       }
+       stage('setup') {
+         steps {
+             browserstack(credentialsId: 'b8bf820d-6ee0-40ab-92e8-3e15c3db7965') {
+                 sh 'mvn compile && mvn test -P on-prem-parallel-onboarding'
+                 sh 'mvn compile && mvn test -P on-prem-single-onboarding'
+             }
+             browserStackReportPublisher 'automate'
+         }
+       }
+     }
+   }
