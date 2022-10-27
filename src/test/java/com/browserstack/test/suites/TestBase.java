@@ -61,8 +61,8 @@ public class TestBase {
 
             Map<String, String> commonCapabilities = (Map<String, String>) envs.get("common_caps");
             commonCapabilities.put("name", m.getName());
-            commonCapabilities.put("build", commonCapabilities.get("build") + " - " + TIMESTAMP);
-//            commonCapabilities.put("build", commonCapabilities.get("build"));
+//            commonCapabilities.put("build", commonCapabilities.get("build") + " - " + TIMESTAMP);
+            commonCapabilities.put("build", commonCapabilities.get("build"));
 
 
             Map<String, String> envCapabilities = (Map<String, String>) ((org.json.simple.JSONArray) envs.get("env_caps")).get(env_cap_id);
