@@ -1,26 +1,30 @@
- pipeline {
-    agent any
-    tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
     }
     stages {
-        stage ('Initialize') {
+        stage('Build') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                sh 'mvn -B -DskipTests clean package'
             }
         }
-       stage('setup') {
-         steps {
-             browserstack(credentialsId: 'b8bf820d-6ee0-40ab-92e8-3e15c3db7965') {
-                 sh 'mvn compile && mvn test -P on-prem-parallel-onboarding'
-                 sh 'mvn compile && mvn test -P on-prem-single-onboarding'
-             }
-             browserStackReportPublisher 'automate'
-         }
-       }
-     }
-   }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
+    }
+}
