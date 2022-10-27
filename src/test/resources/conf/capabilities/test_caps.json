@@ -55,7 +55,7 @@
     "single": {
       "common_caps": {
         "project": "nicholas-browserstack-examples",
-        "build": "BROWSERSTACK_BUILD_NAME",
+        "build": "BROWSERSTACK_BUILD_NAME_NICHOLAS",
         "name": "Nicholas Single Test"
       },
       "env_caps": [
