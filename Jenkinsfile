@@ -7,6 +7,7 @@
                  sh 'mvn compile && mvn test -P on-prem-parallel-onboarding'
                  sh 'mvn compile && mvn test -P on-prem-single-onboarding'
              }
+             browserStackReportPublisher 'automate'
          }
        }
      }
