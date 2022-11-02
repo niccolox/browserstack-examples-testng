@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel">
-    <test name="Automate Onboarding chrome">
+    <test name="BStackDemo 0">
         <parameter name="env_cap_id" value="0"/>
         <classes>
             <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
             <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
         </classes>
     </test>
-    <test name="Automate Onboarding OSx chrome">
+    <test name="BStackDemo 1">
+        <parameter name="env_cap_id" value="1"/>
+        <classes>
+            <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
+            <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
+        </classes>
+    </test>
+    <test name="BStackDemo 2">
+        <parameter name="env_cap_id" value="2"/>
+        <classes>
+            <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
+            <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
+        </classes>
+    </test>
+    <test name="BStackDemo 3">
         <parameter name="env_cap_id" value="3"/>
         <classes>
             <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
             <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
         </classes>
     </test>
-    <test name="BStackDemo Android">
+    <test name="BStackDemo 4">
         <parameter name="env_cap_id" value="4"/>
         <classes>
             <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
             <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
         </classes>
     </test>
-
+    <test name="BStackDemo 5">
+        <parameter name="env_cap_id" value="5"/>
+        <classes>
+            <class name="com.browserstack.test.suites.onboarding.LoginTest"/>
+            <class name="com.browserstack.test.suites.onboarding.OrderTest"/>
+        </classes>
+    </test>
 </suite>

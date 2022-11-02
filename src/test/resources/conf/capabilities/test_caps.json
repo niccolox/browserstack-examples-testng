@@ -5,9 +5,9 @@
   "tests": {
     "parallel": {
       "common_caps": {
-        "project": "browserstack-examples",
-        "build": "browserstack-examples-testNG",
-        "name": "Parallel Test",
+        "project": "Nicholas Automate Bstackdemo.com Selenium",
+        "build": "Nicholas-Automate-testNG",
+        "name": "Nicholas Parallel Test",
         "browserstack.debug": "true",
         "browserstack.networkLogs": "true",
         "browserstack.console": "verbose"
@@ -15,7 +15,7 @@
       "env_caps": [
         {
           "os": "Windows",
-          "os_version": "10",
+          "os_version": "11",
           "browser": "Chrome",
           "browser_version": "latest-1",
           "browserstack.selenium_version": "3.141.59",
@@ -23,9 +23,15 @@
         },
         {
           "os": "Windows",
-          "os_version": "10",
-          "browser": "Internet Explorer",
-          "browser_version": "11.0"
+          "os_version": "11",
+          "browser": "Edge",
+          "browser_version": "latest"
+        },
+        {
+          "os": "Windows",
+          "os_version": "11",
+          "browser": "Edge",
+          "browser_version": "latest-1"
         },
         {
           "os": "OS X",
@@ -43,11 +49,6 @@
           "os": "android",
           "os_version": "10.0",
           "device": "Samsung Galaxy S20",
-          "realMobile": true
-        },
-        {
-          "device": "iPhone 8 Plus",
-          "os_version": "12",
           "realMobile": true
         }
       ]

@@ -11,6 +11,7 @@ mvn compile && mvn test -P on-prem-single-onboarding
 
 ```
 mvn test -P bstack-parallel-browsers-onboarding
+~/apache-maven-3.6.3/bin/mvn test -P bstack-parallel-browsers-onboarding
 ```
 
 ## Github Action
